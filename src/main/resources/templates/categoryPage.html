@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{head}">
+
+</head>
+<body class="row col-6 mx-auto">
+    <form action="category/add" method="post">
+        <input type="text" class="form-control" name="name">
+        <button>ADD CATEGORY</button>
+    </form>
+    <table class="table table-striped">
+        <thead>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>CREATED AT</th>
+            <th>UPDATED AT</th>
+        </thead>
+        <tbody>
+            <tr th:each="category : ${categories}">
+                <td th:text="${category.id}"></td>
+                <td th:text="${category.name}"></td>
+                <td th:text="${category.createdAt}"></td>
+                <td th:text="${category.updatedAt}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
